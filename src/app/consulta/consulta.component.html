@@ -1,1 +1,78 @@
-<p>consulta works!</p>
+<div fxLayout="row" fxLayoutAlign="center">
+    <div fxLayout="column" fxFlex="1000px">
+        <form class="mt-60" #buscaForm="ngForm" (ngSubmit)="pesquisar()">
+            <mat-card appearance="outlined" class="card-pesquisa">
+                <mat-card-header>
+                    <mat-card-title class="title">Procurar Produtos</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="mt-20">
+                    <div fxLayout="row">
+                        <div fxLayout="column" fxFlex="950px">
+                            <mat-form-field appearance="outline">
+                                <mat-label>
+                                    Digite o nome do produto
+                                </mat-label>
+                                <input matInput name="nomeBusca" [(ngModel)]="nomeBusca">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button type="submit" mat-flat-button>
+
+                        <mat-icon fontIcon="search">
+                        </mat-icon>
+                        PESQUISAR
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </form>
+    </div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center" class="mt-20">
+    <div fxLayout="column" fxFlex="1000px">
+        <mat-card appearance="outlined" class="card-pesquisa">
+            <mat-card-header>
+                <mat-card-title class="title">Resultado</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <table mat-table [dataSource]="listaProdutos">
+                    <!-- <ng-container matColumnDef="foto">
+                        <th mat-header-cell *matHeaderCellDef>Foto</th>
+                        <td mat-cell *matCellDef="let produto">{{produto.foto}}</td>
+                    </ng-container> -->
+
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef>ID</th>
+                        <td mat-cell *matCellDef="let produto">{{produto.id}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="nome">
+                        <th mat-header-cell *matHeaderCellDef>Produto</th>
+                        <td mat-cell *matCellDef="let produto">{{produto.nome}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="preco">
+                        <th mat-header-cell *matHeaderCellDef>Preço</th>
+                        <td mat-cell *matCellDef="let produto">{{produto.preco}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="dataValidade">
+                        <th mat-header-cell *matHeaderCellDef>Data de Validade</th>
+                        <td mat-cell *matCellDef="let produto">{{produto.dataValidade}}/td>
+                    </ng-container>
+                    <ng-container matColumnDef="descricao">
+                        <th mat-header-cell *matHeaderCellDef>Descrição</th>
+                        <td mat-cell *matCellDef="let produto">{{produto.descricao}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="acoes">
+                        <th mat-header-cell *matHeaderCellDef>Ações</th>
+                        <td mat-cell *matCellDef="let produto">{{produto.acoes}}</td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="colunasTable"></tr>
+                    <tr mat-row *matRowDef="let row; columns: colunasTable;"></tr>
+                </table>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

@@ -7,7 +7,7 @@
         <form class="mt-60" #productsForm="ngForm" (ngSubmit)="salvar()">
             <mat-card class="card-cadastro">
                 <mat-card-header>
-                    <mat-card-title class=></mat-card-title>
+                    <mat-card-title></mat-card-title>
                 </mat-card-header>
                 <mat-card-content class="mt-20 card-content">
                     <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px" class="foto-produto">
@@ -27,7 +27,7 @@
                                     Nome do Produto
                                 </mat-label>
                                 <input type="email" [(ngModel)]="product.nome" name="nome"
-                                    placeholder="Qual o Nome do Produto?" matInput />
+                                    placeholder="Qual o Nome do Produto?" matInput required />
                             </mat-form-field>
                         </div>
 
@@ -36,8 +36,9 @@
                                 <mat-label>
                                     Preço
                                 </mat-label>
-                                <input type="email" [(ngModel)]="product.preco" name="preco"
-                                    placeholder=" Qual o Preço do Produto?" matInput />
+                                <input type="text" [(ngModel)]="product.preco" name="preco" mask="separator.2"
+                                    thousandSeparator="." prefix="R$ " placeholder=" Qual o Preço do Produto?"
+                                    matInput />
                             </mat-form-field>
                         </div>
 
@@ -48,7 +49,7 @@
                                 </mat-label>
                                 <input matInput [matDatepicker]="picker" [(ngModel)]="product.dataValidade"
                                     name="dataValidade" [min]="hoje" #dataValidade="ngModel"
-                                    placeholder="Qual a validade do produto?" required />
+                                    placeholder="Qual a validade do produto?" />
                                 <mat-error *ngIf="dataValidade.invalid && dataValidade.touched">
                                     A data de validade deve ser hoje ou uma data futura.
                                 </mat-error>

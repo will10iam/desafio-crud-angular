@@ -15,6 +15,18 @@ export class ProdutoService {
     localStorage.setItem(ProdutoService.REPO_PRODUTOS, JSON.stringify(storage));
   }
 
+  pesquisarProdutos(nomeBusca: string): Product[] {
+    const produtos = this.obterStorage();
+
+    if (!nomeBusca) {
+      return produtos;
+    }
+
+    return produtos.filter(
+      (produto) => produto.nome?.indexOf(nomeBusca) !== -1
+    );
+  }
+
   private obterStorage(): Product[] {
     const repoProdutos = localStorage.getItem(ProdutoService.REPO_PRODUTOS);
     if (repoProdutos) {

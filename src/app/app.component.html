@@ -1,30 +1,30 @@
-<mat-toolbar class="toolbar">
-  <span>Painel de Cadastro de Produtos</span>
-  <span class=" spacer"></span>
+<ng-container *ngIf="router.url !== '/'">
+  <mat-toolbar class="toolbar">
+    <span>Painel de Cadastro de Produtos</span>
+    <span class=" spacer"></span>
 
-  <ng-container *ngIf="router.url !== '/'">
     <!-- Botão Página Inicial aparece em todas as rotas exceto a home -->
-    <button mat-flat-button routerLink="/" class="mr-5">Página Inicial</button>
+    <button mat-fab routerLink="/" class="mr-5"><mat-icon fontIcon="home"></mat-icon></button>
 
     <!-- Se estiver na rota '/cadastro', mostra 'Ver Produtos' -->
-    <button *ngIf="router.url === '/cadastro'" mat-flat-button routerLink="/consulta" class="ml-2">
-      Ver Produtos
+    <button *ngIf="router.url === '/cadastro'" mat-fab routerLink="/consulta" class="ml-2">
+      <mat-icon fontIcon="search"></mat-icon>
     </button>
 
     <!-- Se estiver na rota '/consulta', mostra 'Novo Produto' -->
-    <button *ngIf="router.url === '/consulta'" mat-flat-button routerLink="/cadastro" class="ml-2">
-      Novo Produto
+    <button *ngIf="router.url === '/consulta'" mat-fab routerLink="/cadastro" class="ml-2">
+      <mat-icon fontIcon="add"></mat-icon>
     </button>
-  </ng-container>
-</mat-toolbar>
+  </mat-toolbar>
+</ng-container>
 
-<router-outlet></router-outlet>
 
 <div *ngIf="router.url === '/'" class="container">
-  <h3>Bem-vindos ao Painel de Produtos!</h3>
+  <h1>PAINEL DE PRODUTOS</h1>
   <div>
-    <button mat-raised-button routerLink="/consulta" class="mr-5">Ver Produtos</button>
-    <button mat-flat-button routerLink="/cadastro">Novo produto</button>
+    <button mat-flat-button routerLink="/consulta" class="cons-button">Ver Produtos</button>
+    <button mat-flat-button routerLink="/cadastro" class="cad-button">Novo produto</button>
   </div>
 
 </div>
+<router-outlet></router-outlet>

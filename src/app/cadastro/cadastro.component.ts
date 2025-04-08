@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { Product } from './produto';
 import { ProdutoService } from '../produto.service';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 @Component({
   selector: 'app-cadastro',
@@ -24,10 +25,11 @@ import { ProdutoService } from '../produto.service';
     MatIconModule,
     MatDatepickerModule,
     CommonModule,
+    NgxMaskDirective,
   ],
   standalone: true,
   templateUrl: './cadastro.component.html',
-  providers: [provideNativeDateAdapter()],
+  providers: [provideNativeDateAdapter(), provideNgxMask()],
   styleUrl: './cadastro.component.scss',
 })
 export class CadastroComponent {
