@@ -1,11 +1,57 @@
 .card-cadastro {
-  background-color: #fff;
+  background-color: #1f2525;
 }
 
-.input-cadastro {
-  background-color: bisque;
+.title {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  font-size: 25px;
 }
 
 .mt-60 {
   margin-top: 60px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.card-content {
+  padding: 0px 20px;
+}
+
+.card-actions {
+  padding: 10px 20px 20px 20px;
+}
+
+.foto-produto {
+  padding-bottom: 40px;
+  color: #fff;
+  border: 1px solid #808483;
+  border-radius: 5px;
+  height: 70px;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 903px;
+}
+
+.foto-produto input {
+  margin-top: 5px;
+  font-family: "Roboto", sans-serif;
+}
+
+.foto-produto label {
+  font-family: "Roboto", sans-serif;
 }

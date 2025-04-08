@@ -1,23 +1,89 @@
 <div fxLayout="row" fxLayoutAlign="center">
-    <div fxLayout="column" fxFlex="900px">
-        <h1>CADASTRE O SEU PRODUTO</h1>
-        <form class="mt-60">
+    <div fxLayout="column" fxFlex="1000px">
+        <div class="title">
+            <h1>CADASTRE O SEU PRODUTO</h1>
+        </div>
+
+        <form class="mt-60" #productsForm="ngForm" (ngSubmit)="salvar()">
             <mat-card class="card-cadastro">
                 <mat-card-header>
-                    <mat-card-title></mat-card-title>
+                    <mat-card-title class=></mat-card-title>
                 </mat-card-header>
-                <mat-card-content class="mt-60">
+                <mat-card-content class="mt-20 card-content">
+                    <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px" class="foto-produto">
+                        <div fxLayout="column" fxFlex="300px">
+                            <label for="foto">Insira a foto do Produto</label>
+                            <input type="file" id="foto" (change)="onFileSelected($event)" accept="image/*" />
+                            <!-- <div *ngIf="previewUrl" style="margin-top: 10px;">
+                                <img [src]="previewUrl" alt="Preview" style="max-width: 200px; max-height: 200px;" />
+                            </div> -->
+                        </div>
+                    </div>
+
                     <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
-                        <div fxLayout="column" fxFlex="800px">
-                            <mat-form-field class="full-width">
+                        <div fxLayout="column" fxFlex="290px">
+                            <mat-form-field class="full-width" appearance="outline">
                                 <mat-label>
                                     Nome do Produto
                                 </mat-label>
-                                <input type="text" matInput placeholder="Digite o nome do produto" />
+                                <input type="email" [(ngModel)]="product.nome" name="nome"
+                                    placeholder="Qual o Nome do Produto?" matInput />
                             </mat-form-field>
                         </div>
+
+                        <div fxLayout="column" fxFlex="290px">
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>
+                                    Preço
+                                </mat-label>
+                                <input type="email" [(ngModel)]="product.preco" name="preco"
+                                    placeholder=" Qual o Preço do Produto?" matInput />
+                            </mat-form-field>
+                        </div>
+
+                        <div fxLayout="column" fxFlex="290px">
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>
+                                    Data de Validade
+                                </mat-label>
+                                <input matInput [matDatepicker]="picker" [(ngModel)]="product.dataValidade"
+                                    name="dataValidade" [min]="hoje" #dataValidade="ngModel"
+                                    placeholder="Qual a validade do produto?" required />
+                                <mat-error *ngIf="dataValidade.invalid && dataValidade.touched">
+                                    A data de validade deve ser hoje ou uma data futura.
+                                </mat-error>
+                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+
                     </div>
+
+                    <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+                        <div fxLayout="column" fxFlex="900px">
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>
+                                    Descrição
+                                </mat-label>
+                                <textarea type="text" [(ngModel)]="product.descricao" name="descricao"
+                                    placeholder="Digite a descrição do produto" matInput></textarea>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+
                 </mat-card-content>
+                <mat-card-actions class="card-actions">
+                    <button mat-flat-button type="submit">
+                        <mat-icon fontIcon="save"></mat-icon>
+                        CADASTRAR
+                    </button>
+
+                    <button mat-flat-button class="ml-10">
+                        <mat-icon fontIcon="backspace"></mat-icon>
+                        CANCELAR
+                    </button>
+                </mat-card-actions>
             </mat-card>
         </form>
     </div>
