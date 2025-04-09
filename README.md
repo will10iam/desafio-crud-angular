@@ -40,12 +40,12 @@ src/
 ├── app/
 │   ├── components/
 │   │   ├── cadastro/          → Formulário de cadastro de produtos
-│   │   ├── lista-produtos/    → Exibição em cards e tabela
-│   ├── services/              → Lógica para salvar/buscar produtos no localStorage
+│   │   ├── consulta/          → Exibição em cards e tabela
+│   ├── produto.services.ts/   → Lógica para salvar/buscar produtos no localStorage
 │   └── app.component.ts       → Componente principal
-├── assets/
 ├── index.html
-└── styles.css
+├── main.ts
+└── styles.scss
 ```
 
 ---
@@ -55,7 +55,7 @@ src/
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
+git clone [https://github.com/will10iam/desafio-crud-angular]
 ```
 
 2. Instale as dependências:
