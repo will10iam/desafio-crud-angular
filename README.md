@@ -89,9 +89,9 @@ ng serve
 ---
 ## 🌐 Acesse a Aplicação Online
 
-A aplicação está disponível em:
+A aplicação está disponível online 👇
 
-👉 [Clique aqui para acessar](https://desafio-crud-angular.netlify.app/)
+👉 [Desafio CRUD Angular](https://desafio-crud-angular.netlify.app/)
 
 ---
 
