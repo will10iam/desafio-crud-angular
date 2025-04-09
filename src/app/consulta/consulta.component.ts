@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { Product } from '../cadastro/produto';
 import { ProdutoService } from '../produto.service';
 import { CommonModule } from '@angular/common';
@@ -24,11 +25,13 @@ import { Router } from '@angular/router';
     MatButtonModule,
     MatTableModule,
     CommonModule,
+    MatGridListModule,
   ],
   templateUrl: './consulta.component.html',
   styleUrl: './consulta.component.scss',
 })
 export class ConsultaComponent implements OnInit {
+  modoCard = false;
   nomeBusca: string = '';
   imagemBase64: string = '';
   listaProdutos: Product[] = [];
@@ -61,7 +64,11 @@ export class ConsultaComponent implements OnInit {
     this.listaProdutos = this.service.pesquisarProdutos(this.nomeBusca);
   }
 
-  preparaEditar(id: string) {
+  preparaEditar(id: string | undefined) {
+    if (!id) {
+      console.error('Invalid product ID');
+      return;
+    }
     this.router.navigate(['/cadastro'], {
       queryParams: { id: id },
     });

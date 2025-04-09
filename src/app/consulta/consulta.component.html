@@ -1,3 +1,9 @@
+<div style="text-align: right; margin: 16px;">
+    <button mat-button (click)="modoCard = !modoCard">
+        {{modoCard ? 'Ver como Tabela' : 'Ver como Cards'}}
+    </button>
+</div>
+
 <div fxLayout="row" fxLayoutAlign="center">
     <div fxLayout="column" fxFlex="1000px">
         <form class="mt-60" #buscaForm="ngForm" (ngSubmit)="pesquisar()">
@@ -30,7 +36,7 @@
     </div>
 </div>
 
-<div fxLayout="row" fxLayoutAlign="center" class="mt-20">
+<div fxLayout="row" fxLayoutAlign="center" class="mt-20" *ngIf="!modoCard">
     <div fxLayout="column" fxFlex="1200px">
         <mat-card appearance="outlined" class="card-resultado">
             <mat-card-header>
@@ -40,8 +46,9 @@
                 <table mat-table [dataSource]="listaProdutos">
                     <ng-container matColumnDef="foto">
                         <th mat-header-cell *matHeaderCellDef>Foto</th>
-                        <td mat-cell *matCellDef="let produto"><img [src]="imagemBase64" alt="Imagem do Produto"
-                                class="img-produto" /></td>
+                        <td mat-cell *matCellDef="let produto"><img mat-card-image [src]="produto.foto"
+                                alt="Imagem do Produto" style="max-width: 50px; max-height: 50px; margin-top: 8px;" />
+                        </td>
                     </ng-container>
 
                     <ng-container matColumnDef="id">
@@ -92,6 +99,39 @@
                     <tr mat-row *matRowDef="let row; columns: colunasTable;"></tr>
                 </table>
             </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center" class="mt-20" *ngIf="modoCard">
+    <div class="container-cards">
+        <mat-card *ngFor="let produto of listaProdutos" appearance="outlined" class="cards">
+            <mat-card-content class="cards-content">
+                <img mat-card-image [src]="produto.foto" alt="Imagem do Produto" class="card-image" />
+                <mat-card-title class="card-title">{{produto.nome}}</mat-card-title>
+                <p><span>Preço:</span> {{produto.preco | currency:
+                    'BRL':'symbol':'1.2-2':'pt-BR'}}</p>
+                <p><span>Descrição:</span> {{produto.descricao }}</p>
+                <p><span>Data de Validade: </span>{{produto.dataValidade | date:'dd/MM/yyyy'}}</p>
+            </mat-card-content>
+            <mat-card-actions class="btn-actions">
+                <button type="button" (click)="preparaEditar(produto.id)" class="cards-editar">
+                    <mat-icon fontIcon="edit" class="cards-icon">
+                    </mat-icon>
+                </button>
+
+                @if(!produto.deletando){
+                <button type="button" (click)="preparaDeletar(produto)" class="cards-deletar">
+                    <mat-icon fontIcon="delete" class="cards-icon"></mat-icon>
+
+                </button>
+                }@else {
+                <button type="button" (click)="deletar(produto)" class="cards-confirmar">
+                    <mat-icon fontIcon="question_mark" class="cards-icon"></mat-icon>
+                    Confirma
+                </button>
+                }
+            </mat-card-actions>
         </mat-card>
     </div>
 </div>

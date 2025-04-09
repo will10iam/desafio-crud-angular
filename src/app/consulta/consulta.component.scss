@@ -21,6 +21,7 @@
 .card-resultado {
   margin-top: 40px;
 }
+
 .btn-editar {
   background-color: #2c7c7c;
   color: #fff;
@@ -30,6 +31,7 @@
   font-size: 16px;
   display: inline-flex;
   align-items: center;
+  margin-left: 5px;
   margin-top: 5px;
   cursor: pointer;
 }
@@ -51,6 +53,7 @@
   align-items: center;
   margin-left: 5px;
   margin-top: 5px;
+  margin-bottom: 5px;
   cursor: pointer;
 }
 
@@ -83,10 +86,87 @@
   font-weight: 500;
 }
 
-.input-pesquisa {
-  height: 10px;
+.container-cards {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 15px;
 }
 
-.img-produto {
-  width: 50px;
+.cards {
+  margin-top: 40px;
+}
+
+.cards span {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.cards p {
+  font-size: 15px;
+}
+
+.cards-content {
+  width: 250px;
+  color: #fff;
+}
+
+.card-image {
+  width: 250px;
+  height: 200px;
+  align-items: center;
+}
+
+.card-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.btn-actions {
+  margin-left: 10px;
+}
+
+.cards-editar {
+  background-color: #2c7c7c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  display: inline-flex;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.cards-icon {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.cards-deletar {
+  background-color: rgb(230, 75, 75);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.cards-confirmar {
+  background-color: rgb(167, 5, 5);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 5px;
+  margin-top: 5px;
+  cursor: pointer;
 }
