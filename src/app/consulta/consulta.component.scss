@@ -1,11 +1,92 @@
 .title {
   color: #fff;
   font-family: "Roboto", sans-serif;
-  font-size: 24px;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.title-pesquisar {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
   font-weight: 500;
   margin-bottom: 10px;
 }
 
 .card-pesquisa {
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+.card-resultado {
+  margin-top: 40px;
+}
+.btn-editar {
+  background-color: #2c7c7c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.icon {
+  margin-right: 5px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.btn-deletar {
+  background-color: rgb(230, 75, 75);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.btn-confirmar {
+  background-color: rgb(167, 5, 5);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.search-button {
+  background-color: #2c7c7c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  margin-top: -30px;
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.input-pesquisa {
+  height: 10px;
+}
+
+.img-produto {
+  width: 50px;
 }

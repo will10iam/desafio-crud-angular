@@ -7,6 +7,7 @@ export class Product {
   preco?: number;
   dataValidade?: string;
   foto?: string;
+  imagemBase64?: string;
   deletando: boolean = false;
 
   static newProduct() {
