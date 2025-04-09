@@ -87,6 +87,13 @@ ng serve
 4. Acesse em: `http://localhost:4200`
 
 ---
+## 🌐 Acesse a Aplicação Online
+
+A aplicação está disponível em:
+
+👉 [Clique aqui para acessar](https://desafio-crud-angular.netlify.app/)
+
+---
 
 ## 📌 Observações
 
