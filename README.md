@@ -29,7 +29,21 @@ O usuário pode alternar entre a visualização em **tabela** e em **cards com i
 
 ## 📸 Capturas de Tela
 
-> ![Tela Principal](./src/assets/tela-principal.png)
+### Tela Principal do App
+
+![Tela Principal](./src/assets/tela-principal.png)
+
+### 🧾 Formulário de Cadastro
+
+![Formulário](./src/assets/tela-cadastro.png)
+
+### 📊 Visualização em Tabela
+
+![Tabela de Produtos](./src/assets/tela-visual-tabela.png)
+
+### 🖼️ Visualização em Cards
+
+![Cards de Produtos](./src/assets/tela-visual-cards.png)
 
 ---
 
